@@ -1,0 +1,234 @@
+/* src/App.css */
+
+/* 色票：主色 #28819f，偏簡潔媒體風 */
+:root {
+  --accent: #28819f;
+  --accent-soft: rgba(40, 129, 159, 0.08);
+  --accent-soft-border: rgba(40, 129, 159, 0.2);
+
+  --bg-page: #f3f4f6;
+  --bg-card: #ffffff;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-subtle: #9ca3af;
+
+  --border-subtle: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC",
+    "Segoe UI", sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card {
+  max-width: 640px;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding: 2.3rem 2.1rem;
+  background: var(--bg-card);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Logo 區 */
+.logo-placeholder {
+  margin-bottom: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-mark {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.logo-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-soft-border);
+  margin-bottom: 1rem;
+}
+
+.badge-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* Title & text */
+h1 {
+  font-size: clamp(1.9rem, 2.4vw + 1.3rem, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.6rem;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--border-subtle);
+  margin: 1.2rem 0 1.1rem;
+}
+
+/* Info list */
+.info-list {
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.info-item-bullet {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  margin-top: 0.4rem;
+  background: var(--accent-soft-border);
+}
+
+/* CTA */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid transparent;
+  font-size: 0.92rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #f9fafb;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(40, 129, 159, 0.35);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(40, 129, 159, 0.45);
+  background: #1f6a83; /* 稍微加深 */
+  border-color: #1f6a83;
+}
+
+.btn-ghost {
+  background: #ffffff;
+  color: var(--text-muted);
+  border-color: var(--border-subtle);
+}
+
+.btn-ghost:hover {
+  background: #f9fafb;
+  border-color: var(--accent-soft-border);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.05rem;
+  transform: translateY(1px);
+}
+
+/* Meta text */
+.meta {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  margin-top: 0.35rem;
+}
+
+.meta strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* RWD */
+@media (max-width: 640px) {
+  .card {
+    padding: 1.9rem 1.6rem 1.8rem;
+    border-radius: 1rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
