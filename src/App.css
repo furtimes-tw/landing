@@ -169,16 +169,40 @@ h1 {
 .info-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
+  gap: 0.6rem;
 }
 
+/* bullet 本身 */
 .info-item-bullet {
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 999px;
-  margin-top: 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
   background: var(--accent-soft-border);
+  margin-top: 0.45rem;
 }
+
+/* 中英文字 block：上下排列 */
+.info-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+/* 中文 */
+.info-zh {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* 英文 */
+.info-en {
+  color: var(--text-subtle);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  display: block;
+}
+
 
 /* CTA */
 .cta-row {

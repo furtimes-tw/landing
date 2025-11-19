@@ -26,21 +26,38 @@ function App() {
           我們正在重新打造獸時報官網，
           在新網站上線前，這裡會作為暫時的落地頁面。
         </p>
+        <p className="subtitle subtitle-en">
+          We are rebuilding the official FurTimes website.
+        </p>
 
         <div className="divider"></div>
 
         <ul className="info-list">
           <li className="info-item">
-            <span className="info-item-bullet"></span>
-            <span>網站目前下線重製中！</span>
+            <span className="info-item-bullet" />
+
+            <div className="info-text-block">
+              <span className="info-zh">網站目前下線重製中！</span>
+              <span className="info-en">The current site is temporarily offline for a full redesign.</span>
+            </div>
           </li>
+
           <li className="info-item">
-            <span className="info-item-bullet"></span>
-            <span>一切更新目前以粉專為主。</span>
+            <span className="info-item-bullet" />
+            <div className="info-text-block">
+              <span className="info-zh">一切更新目前以粉專為主。</span>
+              <span className="info-en">For the latest furry news, feel free to visit our Facebook page.</span>
+            </div>
           </li>
+
           <li className="info-item">
-            <span className="info-item-bullet"></span>
-            <span>感謝你在網站重製期間的耐心等待與支持，請期待新版本上線！</span>
+            <span className="info-item-bullet" />
+            <div className="info-text-block">
+              <span className="info-zh">感謝你在網站重製期間的耐心支持，請期待新版本上線！</span>
+              <span className="info-en">
+                Thank you for your patience and support during this transition. Please look forward to the relaunch!
+              </span>
+            </div>
           </li>
         </ul>
 
