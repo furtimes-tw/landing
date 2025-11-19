@@ -6,7 +6,7 @@
   --accent-soft: rgba(40, 129, 159, 0.08);
   --accent-soft-border: rgba(40, 129, 159, 0.2);
 
-  --bg-page: #f3f4f6;
+  --bg-page: #f3f4f6;   /* 整個頁面的淺灰底 */
   --bg-card: #ffffff;
 
   --text-main: #111827;
@@ -16,27 +16,40 @@
   --border-subtle: #e5e7eb;
 }
 
-* {
-  box-sizing: border-box;
+/* 讓整個 viewport 都填滿同一個背景色 */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.page {
-  min-height: 100vh;
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC",
     "Segoe UI", sans-serif;
-  background: var(--bg-page);
+  background: var(--bg-page);  /* 關鍵：把 Vite 預設的深灰底覆蓋掉 */
   color: var(--text-main);
+}
+
+/* 外層容器：負責置中 + RWD 全填滿 */
+.page {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg-page);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-x: hidden; /* 防止小數點捲軸 */
 }
 
+/* 卡片依螢幕寬度縮放，避免貼邊或太窄 */
 .card {
-  max-width: 640px;
   width: 100%;
+  max-width: 640px;
   border-radius: 1.25rem;
   padding: 2.3rem 2.1rem;
   background: var(--bg-card);
@@ -44,10 +57,25 @@
   border: 1px solid var(--border-subtle);
 }
 
+@media (max-width: 640px) {
+  .card {
+    padding: 1.9rem 1.6rem 1.8rem;
+    border-radius: 1rem;
+  }
+}
+
+.header-block {
+  display: flex;
+  flex-direction: column;        /* Logo 在上、Badge 在下 */
+  align-items: center;           /* ⭐ 水平置中 */
+  gap: 0.6rem;                   /* Logo 與 badge 間距 */
+  margin-bottom: 1.5rem;
+}
+
 /* Logo 區 */
 .logo-placeholder {
   margin-bottom: 1.1rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.6rem;
 }
@@ -71,6 +99,12 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  display: block;
 }
 
 /* Badge */

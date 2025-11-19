@@ -1,18 +1,19 @@
 import "./App.css";
+import logo from "./assets/logo.svg";
 
 function App() {
   return (
     <div className="page">
       <main className="card" role="main">
-        <div className="logo-placeholder">
-          {/* 如果之後有正式 Logo，可以改成 <img src="/logo.svg" alt="FurTimes" className="logo-img" /> */}
-          <div className="logo-mark">F</div>
-          <div className="logo-text">FurTimes</div>
-        </div>
+        <div className="header-block">
+          <div className="logo-placeholder">
+            <img src={logo} alt="FurTimes" className="logo-img" />
+          </div>
 
-        <div className="badge" aria-label="網站重製中">
-          <span className="badge-dot"></span>
-          <span>New Site in Progress</span>
+          <div className="badge" aria-label="網站重製中">
+            <span className="badge-dot"></span>
+            <span>New Site in Progress</span>
+          </div>
         </div>
 
         <h1>
@@ -35,6 +36,10 @@ function App() {
           </li>
           <li className="info-item">
             <span className="info-item-bullet"></span>
+            <span>一切更新目前以粉專為主。</span>
+          </li>
+          <li className="info-item">
+            <span className="info-item-bullet"></span>
             <span>感謝你在網站重製期間的耐心等待與支持，請期待新版本上線！</span>
           </li>
         </ul>
@@ -47,7 +52,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            追蹤最新進度
+            點我看粉專
             <span className="btn-icon">↗</span>
           </a>
 
@@ -56,7 +61,7 @@ function App() {
               聯絡編輯團隊
             </a>
             <p className="meta">
-              如需合作或採訪邀約，歡迎來信給我們。<br />
+              如需合作或採訪邀約，歡迎來信！<br />
               <strong>Temporary Landing Page · 2025</strong>
             </p>
           </div>
